@@ -18,8 +18,8 @@ import id.co.wemppywp.shoppingapp.model.Menu;
 
 public class DetailMenuActivity extends AppCompatActivity {
 
-    TextView namaMenuDetail, hargaMenuDetail;
-    ImageView imgMenuDetail;
+    TextView tvNamaMenuDtl, tvHargaMenuDtl;
+    ImageView imgMenuDtl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +31,16 @@ public class DetailMenuActivity extends AppCompatActivity {
         actionBar.setTitle(getResources().getString(R.string.detail));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        namaMenuDetail = findViewById(R.id.namaMenuDetail);
-        namaMenuDetail.setText(menu.getNama());
+        tvNamaMenuDtl = findViewById(R.id.namaMenuDetail);
+        tvNamaMenuDtl.setText(menu.getNama());
 
-        hargaMenuDetail = findViewById(R.id.hargaMenuDetail);
-        hargaMenuDetail.setText("Rp. " + String.valueOf(menu.getHarga()));
+        tvHargaMenuDtl = findViewById(R.id.hargaMenuDetail);
+        tvHargaMenuDtl.setText("Rp. " + String.valueOf(menu.getHarga()));
 
-        imgMenuDetail = findViewById(R.id.imageMenuDetail);
-        Glide.with(imgMenuDetail)
+        imgMenuDtl = findViewById(R.id.imageMenuDetail);
+        Glide.with(imgMenuDtl)
                 .load(menu.getFoto())
-                .into(imgMenuDetail);
+                .into(imgMenuDtl);
     }
 
     @Override

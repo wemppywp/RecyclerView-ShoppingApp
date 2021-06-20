@@ -27,7 +27,7 @@ public class MenuCafeActivity extends AppCompatActivity implements MenuListAdapt
     private List<Menu> menuList = null;
     private MenuListAdapter menuListAdapter;
 
-    TextView alamatCafeDetail, userTV;
+    TextView tvAlamatCafe, tvUser;
     ImageView imgMenu;
 
 
@@ -43,11 +43,11 @@ public class MenuCafeActivity extends AppCompatActivity implements MenuListAdapt
 
         menuList = cafe.getMenus();
 
-        alamatCafeDetail = findViewById(R.id.alamatCafeDetail);
-        alamatCafeDetail.setText(cafe.getAlamat());
+        tvAlamatCafe = findViewById(R.id.alamatCafeDetail);
+        tvAlamatCafe.setText(cafe.getAlamat());
 
-        userTV = findViewById(R.id.userTV);
-        userTV.setText(Singleton.getInstance().getUser());
+        tvUser = findViewById(R.id.userTV);
+        tvUser.setText(Singleton.getInstance().getUser());
 
         imgMenu = findViewById(R.id.imgCafeDetail);
         Glide.with(imgMenu)

@@ -36,13 +36,13 @@ public class CafeListAdapter extends RecyclerView.Adapter<CafeListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull CafeListAdapter.MyViewHolder holder, final int position) {
-        holder.namaCafe.setText(cafeList.get(position).getNama());
-        holder.alamatCafe.setText("Alamat:" + cafeList.get(position).getAlamat());
+        holder.tvNamaCafe.setText(cafeList.get(position).getNama());
+        holder.tvAlamatCafe.setText("Alamat:" + cafeList.get(position).getAlamat());
 
-        Glide.with(holder.imageCafe)
+        Glide.with(holder.imgCafe)
                 .load(cafeList.get(position).getImage())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.imageCafe);
+                .into(holder.imgCafe);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +59,15 @@ public class CafeListAdapter extends RecyclerView.Adapter<CafeListAdapter.MyView
 
     static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView namaCafe;
-        TextView alamatCafe;
-        ImageView imageCafe;
+        TextView tvNamaCafe, tvAlamatCafe;
+        ImageView imgCafe;
 
         public MyViewHolder(View view){
             super(view);
 
-            namaCafe = view.findViewById(R.id.namaCafe);
-            alamatCafe = view.findViewById(R.id.alamatCafe);
-            imageCafe = view.findViewById(R.id.imgCafe);
+            tvNamaCafe = view.findViewById(R.id.namaCafe);
+            tvAlamatCafe = view.findViewById(R.id.alamatCafe);
+            imgCafe = view.findViewById(R.id.imgCafe);
         }
     }
 

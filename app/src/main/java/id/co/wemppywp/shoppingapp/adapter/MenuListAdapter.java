@@ -36,13 +36,13 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MenuListAdapter.MyViewHolder holder, final int position) {
-        holder.namaMenu.setText(menuList.get(position).getNama());
-        holder.hargaMenu.setText("Harga: Rp." + menuList.get(position).getHarga());
+        holder.tvNamaMenu.setText(menuList.get(position).getNama());
+        holder.tvHargaMenu.setText("Harga: Rp." + menuList.get(position).getHarga());
 
-        Glide.with(holder.imageMenu)
+        Glide.with(holder.imgMenu)
                 .load(menuList.get(position).getFoto())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.imageMenu);
+                .into(holder.imgMenu);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +59,15 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
 
     static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView namaMenu;
-        TextView hargaMenu;
-        ImageView imageMenu;
+        TextView tvNamaMenu, tvHargaMenu;
+        ImageView imgMenu;
 
         public MyViewHolder(View view){
             super(view);
 
-            namaMenu = view.findViewById(R.id.namaMenu);
-            hargaMenu = view.findViewById(R.id.hargaMenu);
-            imageMenu = view.findViewById(R.id.imgMenu);
+            tvNamaMenu = view.findViewById(R.id.namaMenu);
+            tvHargaMenu = view.findViewById(R.id.hargaMenu);
+            imgMenu = view.findViewById(R.id.imgMenu);
         }
     }
 

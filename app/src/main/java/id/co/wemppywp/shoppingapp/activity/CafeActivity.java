@@ -28,7 +28,7 @@ import timber.log.Timber;
 
 public class CafeActivity extends AppCompatActivity implements CafeListAdapter.CafeListClicklistener{
 
-    TextView userTV;
+    TextView TvUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,8 @@ public class CafeActivity extends AppCompatActivity implements CafeListAdapter.C
 
         List<Cafe> cafeList = getCafeData();
 
-        userTV = findViewById(R.id.userTV);
-        userTV.setText(Singleton.getInstance().getUser());
+        TvUser = findViewById(R.id.userTV);
+        TvUser.setText(Singleton.getInstance().getUser());
 
         initRecyclerView(cafeList);
     }
