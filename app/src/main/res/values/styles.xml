@@ -8,4 +8,34 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomFontStyleBold24spHitam">
+        <item name="android:textStyle">bold</item>/>
+        <item name="android:textSize">@dimen/dimen_24sp</item>/>
+        <item name="android:textColor">@color/hitam</item>/>
+    </style>
+
+    <style name="CustomFontStyleBold24spGrey">
+        <item name="android:textStyle">bold</item>/>
+        <item name="android:textSize">@dimen/dimen_24sp</item>/>
+        <item name="android:textColor">@color/grey</item>/>
+    </style>
+
+    <style name="CustomFontStyleBold16spHitam">
+        <item name="android:textStyle">bold</item>/>
+        <item name="android:textSize">@dimen/dimen_16sp</item>/>
+        <item name="android:textColor">@color/hitam</item>/>
+    </style>
+
+    <style name="CustomFontStyleItalic14sp">
+        <item name="android:textStyle">italic</item>/>
+        <item name="android:textSize">@dimen/dimen_14sp</item>/>
+        <item name="android:textColor">@color/colorPrimary</item>/>
+    </style>
+
+    <style name="CustomFontStyleItalic12sp">
+        <item name="android:textStyle">italic</item>/>
+        <item name="android:textSize">@dimen/dimen_12sp</item>/>
+        <item name="android:textColor">@color/grey</item>/>
+    </style>
+
 </resources>

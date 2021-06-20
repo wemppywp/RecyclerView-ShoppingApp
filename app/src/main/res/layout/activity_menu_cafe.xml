@@ -10,20 +10,18 @@
         android:id="@+id/userTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="14sp"
-        android:textStyle="italic"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        style="@style/CustomFontStyleItalic14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgCafeDetail"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/dimen_60dp"
+        android:layout_height="@dimen/dimen_60dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userTV" />
 
@@ -31,8 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="90dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/dimen_90dp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imgCafeDetail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,9 +41,7 @@
             android:id="@+id/alamatCafeDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:textStyle="italic" />
+            style="@style/CustomFontStyleItalic12sp"/>
 
     </LinearLayout>
 
@@ -53,12 +49,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:text="menu"
-        android:textColor="@color/grey"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginStart="@dimen/dimen_32dp"
+        android:text="@string/menu"
+        style="@style/CustomFontStyleBold24spGrey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgCafeDetail" />
 
@@ -66,10 +60,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
 
         Glide.with(holder.imageMenu)
                 .load(menuList.get(position).getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.imageMenu);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -13,11 +13,11 @@ public class Cafe implements Parcelable {
     private List<Menu> menus;
 
 
-    protected Cafe(Parcel in) {
-        nama = in.readString();
-        alamat = in.readString();
-        image = in.readString();
-        menus = in.createTypedArrayList(Menu.CREATOR);
+    protected Cafe(Parcel parcel) {
+        nama = parcel.readString();
+        alamat = parcel.readString();
+        image = parcel.readString();
+        menus = parcel.createTypedArrayList(Menu.CREATOR);
     }
 
     public static final Creator<Cafe> CREATOR = new Creator<Cafe>() {

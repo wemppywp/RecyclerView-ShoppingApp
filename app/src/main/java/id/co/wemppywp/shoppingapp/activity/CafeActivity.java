@@ -21,9 +21,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import id.co.wemppywp.shoppingapp.R;
-import id.co.wemppywp.shoppingapp.Singleton;
+import id.co.wemppywp.shoppingapp.utilities.Singleton;
 import id.co.wemppywp.shoppingapp.adapter.CafeListAdapter;
 import id.co.wemppywp.shoppingapp.model.Cafe;
+import timber.log.Timber;
 
 public class CafeActivity extends AppCompatActivity implements CafeListAdapter.CafeListClicklistener{
 
@@ -35,7 +36,7 @@ public class CafeActivity extends AppCompatActivity implements CafeListAdapter.C
         setContentView(R.layout.activity_cafe);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("List Cafe");
+        actionBar.setTitle(getResources().getString(R.string.list_cafe));
 
         List<Cafe> cafeList = getCafeData();
 
@@ -66,7 +67,7 @@ public class CafeActivity extends AppCompatActivity implements CafeListAdapter.C
                 writer.write(buffer, 0, n);
             }
         }catch (Exception e){
-
+            Timber.d(e, e.getMessage());
         }
 
         String jsonString = writer.toString();

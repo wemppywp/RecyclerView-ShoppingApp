@@ -1,4 +1,4 @@
-package id.co.wemppywp.shoppingapp;
+package id.co.wemppywp.shoppingapp.utilities;
 
 public class Singleton {
 

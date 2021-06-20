@@ -9,10 +9,10 @@ public class Menu implements Parcelable {
     private int harga;
     private String foto;
 
-    protected Menu(Parcel in) {
-        nama = in.readString();
-        harga = in.readInt();
-        foto = in.readString();
+    protected Menu(Parcel parcel) {
+        nama = parcel.readString();
+        harga = parcel.readInt();
+        foto = parcel.readString();
     }
 
     public static final Creator<Menu> CREATOR = new Creator<Menu>() {

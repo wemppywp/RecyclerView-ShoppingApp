@@ -28,7 +28,7 @@ public class DetailMenuActivity extends AppCompatActivity {
 
         Menu menu = getIntent().getParcelableExtra("Menu");
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Detail");
+        actionBar.setTitle(getResources().getString(R.string.detail));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         namaMenuDetail = findViewById(R.id.namaMenuDetail);

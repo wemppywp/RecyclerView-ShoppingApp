@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,7 +17,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import id.co.wemppywp.shoppingapp.R;
-import id.co.wemppywp.shoppingapp.Singleton;
+import id.co.wemppywp.shoppingapp.utilities.Singleton;
 import id.co.wemppywp.shoppingapp.adapter.MenuListAdapter;
 import id.co.wemppywp.shoppingapp.model.Cafe;
 import id.co.wemppywp.shoppingapp.model.Menu;
