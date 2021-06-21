@@ -12,19 +12,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import id.co.wemppywp.shoppingapp.R;
-import id.co.wemppywp.shoppingapp.model.Cafe;
+import id.co.wemppywp.shoppingapp.model.MenuCafe;
 
 public class CafeListAdapter extends RecyclerView.Adapter<CafeListAdapter.MyViewHolder> {
 
-    private List<Cafe> cafeList;
+    private List<MenuCafe> menuCafeList = new ArrayList<>();
     private CafeListClicklistener clicklistener;
 
-    public CafeListAdapter(List<Cafe> cafeList, CafeListClicklistener clicklistener){
-        this.cafeList = cafeList;
+    public CafeListAdapter(CafeListClicklistener clicklistener){
         this.clicklistener = clicklistener;
+    }
+
+    public void setMenuCafeList(List<MenuCafe> menuCafeList){
+        this.menuCafeList = menuCafeList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -36,43 +41,44 @@ public class CafeListAdapter extends RecyclerView.Adapter<CafeListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull CafeListAdapter.MyViewHolder holder, final int position) {
-        holder.tvNamaCafe.setText(cafeList.get(position).getNama());
-        holder.tvAlamatCafe.setText("Alamat:" + cafeList.get(position).getAlamat());
+        holder.tvNamaMenu.setText(menuCafeList.get(position).getNama());
+        holder.tvHargaMenu.setText("Harga: Rp. " + menuCafeList.get(position).getHarga());
 
-        Glide.with(holder.imgCafe)
-                .load(cafeList.get(position).getImage())
+        Glide.with(holder.imgMenu)
+                .load(menuCafeList.get(position).getFoto())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.imgCafe);
+                .centerCrop()
+                .into(holder.imgMenu);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clicklistener.onItemClick(cafeList.get(position));
+                clicklistener.onItemClick(menuCafeList.get(position));
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return cafeList.size();
+        return menuCafeList.size();
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvNamaCafe, tvAlamatCafe;
-        ImageView imgCafe;
+        TextView tvNamaMenu, tvHargaMenu;
+        ImageView imgMenu;
 
         public MyViewHolder(View view){
             super(view);
 
-            tvNamaCafe = view.findViewById(R.id.namaCafe);
-            tvAlamatCafe = view.findViewById(R.id.alamatCafe);
-            imgCafe = view.findViewById(R.id.imgCafe);
+            tvNamaMenu = view.findViewById(R.id.namaMenu);
+            tvHargaMenu = view.findViewById(R.id.hargaMenu);
+            imgMenu = view.findViewById(R.id.imgMenu);
         }
     }
 
     public interface CafeListClicklistener{
-        public void onItemClick (Cafe cafe);
+        public void onItemClick (MenuCafe menuCafe);
     }
 }
 

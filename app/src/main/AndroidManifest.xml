@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.DetailMenuActivity"></activity>
-        <activity android:name=".activity.MenuCafeActivity" />
         <activity android:name=".activity.CafeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,6 +2,6 @@
     <string name="app_name">ShoppingApp</string>
     <string name="add_to_chart">Add to Chart</string>
     <string name="menu">Menu</string>
-    <string name="list_cafe">List Cafe</string>
+    <string name="list_cafe">List Menu Cafe</string>
     <string name="detail">Detail</string>
 </resources>

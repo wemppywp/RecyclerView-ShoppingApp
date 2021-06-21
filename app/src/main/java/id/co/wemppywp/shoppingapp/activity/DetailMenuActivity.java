@@ -4,17 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import id.co.wemppywp.shoppingapp.R;
-import id.co.wemppywp.shoppingapp.model.Cafe;
-import id.co.wemppywp.shoppingapp.model.Menu;
 
 public class DetailMenuActivity extends AppCompatActivity {
 
@@ -26,20 +25,23 @@ public class DetailMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_menu);
 
-        Menu menu = getIntent().getParcelableExtra("Menu");
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.detail));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        Intent intent = getIntent();
+
         tvNamaMenuDtl = findViewById(R.id.namaMenuDetail);
-        tvNamaMenuDtl.setText(menu.getNama());
+        tvNamaMenuDtl.setText(intent.getStringExtra("nama"));
 
         tvHargaMenuDtl = findViewById(R.id.hargaMenuDetail);
-        tvHargaMenuDtl.setText("Rp. " + String.valueOf(menu.getHarga()));
+        tvHargaMenuDtl.setText("Rp. " + intent.getStringExtra("harga"));
 
         imgMenuDtl = findViewById(R.id.imageMenuDetail);
         Glide.with(imgMenuDtl)
-                .load(menu.getFoto())
+                .load(intent.getStringExtra("foto"))
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
                 .into(imgMenuDtl);
     }
 

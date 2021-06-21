@@ -17,12 +17,11 @@
         android:layout_margin="@dimen/dimen_10dp">
 
         <ImageView
-            android:id="@+id/imgCafe"
+            android:id="@+id/imgMenu"
             android:layout_width="@dimen/dimen_80dp"
             android:layout_height="@dimen/dimen_80dp"
             android:layout_gravity="start"
-            android:layout_margin="@dimen/dimen_10dp"
-            android:scaleType="fitCenter"/>
+            android:layout_margin="@dimen/dimen_10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,13 +31,13 @@
             android:layout_marginStart="@dimen/dimen_110dp">
 
             <TextView
-                android:id="@+id/namaCafe"
+                android:id="@+id/namaMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/CustomFontStyleBold16spHitam"/>
 
             <TextView
-                android:id="@+id/alamatCafe"
+                android:id="@+id/hargaMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/CustomFontStyleItalic12sp"/>
